@@ -28,7 +28,6 @@ const images = multer({ storage: newImage }).single("image");
 app.post("/editData", images, (req, res) => {
   const { id, name, email, phone, password } = req.body;
 
-  // console.log(req.file)
 
   if (req.file) {
     const image = req.file.path;
@@ -100,7 +99,7 @@ app.get("/delete/:id", (req, res) => {
     .then((data) => {
       console.log(data);
       fs.unlinkSync(data.image);
-      console.log("Record Deleted Successfully..!");
+      console.log("Record Deleted..!");
       return false;
     })
     .catch((err) => {
@@ -123,7 +122,7 @@ app.post("/insertData", images, (req, res) => {
       image,
     })
     .then((data) => {
-      console.log("Data inserted Successfully..!");
+      console.log("Data inserted..!");
       return false;
     })
     .catch((err) => {
