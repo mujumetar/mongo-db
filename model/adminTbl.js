@@ -5,20 +5,23 @@ const adminschema = mongoose.Schema({
     type: String,
     required: true,
   },
-  email:{
+  email: {
     type: String,
-    require:true
+    require: true,
   },
-  phone:{
+  phone: {
     type: Number,
-    require:true
+    require: true,
   },
-  password:{
+  password: {
     type: String,
-    require:true
-  }
+    require: true,
+  },
+  image: {
+    type: String,
+    required: true,
+  },
 });
-
 
 const adminTbl = mongoose.model("admin", adminschema);
 module.exports = adminTbl;
